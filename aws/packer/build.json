@@ -10,9 +10,8 @@
 		"basename": "top-quotes-ms-java",
 		"creation_time": "{{env `creation_time`}}",
 		"appversion": "{{env `appversion`}}",
-		"version" : "{{env `version}}",
-        "creator": "{{env `creator`}}",
-		"datadog_api_key" : "{{env `datadogToken`}}"
+		"version" : "{{env `version`}}",
+        "creator": "{{env `creator`}}"
 	},
 	"builders": [
 		{
