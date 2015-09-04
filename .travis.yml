@@ -1,0 +1,9 @@
+language: java
+jdk:
+- oraclejdk8
+
+after_success:
+- ./gradlew copyTar
+- mkdir -p ./aws/files/top-quotes-microservice-java/opt
+- cp ./target/top-quotes-microservice-java.tar ./aws/files/top-quotes-microservice-java/opt
+- cd ./aws && ./scripts/build-image.sh top-quotes-microservice-java.json
