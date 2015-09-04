@@ -1,9 +1,11 @@
 language: java
 jdk:
 - oraclejdk8
-
 after_success:
 - ./gradlew copyTar
 - mkdir -p ./aws/files/top-quotes-microservice-java/opt
 - cp ./target/top-quotes-microservice-java.tar ./aws/files/top-quotes-microservice-java/opt
 - cd ./aws && ./scripts/build-image.sh top-quotes-microservice-java.json
+before_install:
+- openssl aes-256-cbc -K $encrypted_d9bc4415ff8f_key -iv $encrypted_d9bc4415ff8f_iv
+  -in cert.pem.enc -out cert.pem -d
