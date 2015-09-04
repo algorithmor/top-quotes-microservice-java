@@ -61,10 +61,7 @@
 		},
 		{
 				"type": "shell",
-				"script": "base-ms.sh",
-				"environment_vars" : [
-					"DD_API_KEY={{user `datadog_api_key`}}"
-				]
+				"script": "base-ms.sh"
 		},
 		{
 			"type": "shell",
