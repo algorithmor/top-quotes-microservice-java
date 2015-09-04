@@ -12,8 +12,8 @@ before_install:
 - echo $packer_host
 after_success:
 - ./gradlew copyTar
-- mkdir -p ./aws/files/got-quotes-microservice-java/opt
-- cp ./target/got-quotes-microservice-java.tar ./aws/files/got-quotes-microservice-java/opt
+- mkdir -p ./aws/files/top-quotes-microservice-java/opt
+- cp ./target/top-quotes-microservice-java.tar ./aws/files/top-quotes-microservice-java/opt
 - rsync -a -arvce "ssh -i cert.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
   ./aws/ packer@$packer_host:/tmp/${TRAVIS_BUILD_ID}
 - rsync -a -arvce "ssh -i cert.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
