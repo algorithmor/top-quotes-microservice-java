@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+app="top_quotes_ms_java"
+
+source './packer/functions.sh'
+source './packer/params.sh'
+
+echo creating app in $domain
+
+exist  application ${app} && echo app ${app} already exist || create application ${appParams}
+getNextVersion ${app} && deploy ${app} || create autoScaling ${autoScalingParams}

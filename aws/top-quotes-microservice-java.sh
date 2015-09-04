@@ -12,5 +12,3 @@ sudo chown -R root:root /opt/top-quotes-microservice-java
 sudo chmod 755 /opt/top-quotes-microservice-java/bin/top-quotes-microservice-java
 
 sudo mkdir /var/log/top-quotes-microservice-java
-
-sudo bash -c "echo tags:top_quotes_microservice_java >> /etc/dd-agent/datadog.conf"
